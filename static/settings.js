@@ -1,3 +1,7 @@
+// ============================================================================
+// settings.js - the settings page: reads/writes app preferences (camera,
+// drawing style, AI prompt tweaks) through the server's /api/settings.
+// ============================================================================
 /**
  * General Settings Page
  */

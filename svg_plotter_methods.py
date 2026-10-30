@@ -1,3 +1,7 @@
+# PLAIN ENGLISH: three different recipes for turning a drawing into pen
+# strokes, tuned so the pen stays on the paper and lines flow smoothly
+# (fewer pen lifts = cleaner, faster drawings).
+# 
 """
 Alternative SVG Generation Methods for Plotter Drawing
 ========================================================

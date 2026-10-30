@@ -1,3 +1,13 @@
+// ============================================================================
+// app.js - the main screen of the caricature robot. What you can do here:
+//   1. Watch the webcam and snap a photo (capturePhoto),
+//   2. or pick an older photo from the gallery (openPhotoGallery),
+//   3. the server AI-redraws it as a caricature and converts it to SVG,
+//   4. press DRAW and the robot arm draws it with a pen (drawCurrentImage).
+// All robot/AI work happens on the server (app.py); this file is the
+// remote control and status display.
+// ============================================================================
+// Global variables
 // Global variables
 let video = null;
 let canvas = null;
@@ -120,6 +130,9 @@ function handleFullscreenChange() {
 }
 
 // Capture photo from video stream
+// Grab one frame from the live webcam: draw the current video image onto a
+// hidden canvas, read it back as a JPEG (base64 text), and POST it to the
+// server, which starts the AI caricature job.
 async function capturePhoto() {
     const promptInput = document.getElementById('promptInput');
     const flash = document.getElementById('flash');
@@ -463,6 +476,9 @@ function closePreview() {
 }
 
 // Draw current image with DexArm
+// THE big button: take the current caricature through the full pipeline -
+// convert to SVG line art, then stream drawing commands to the robot arm -
+// while updating progress messages so the user can watch it happen.
 async function drawCurrentImage() {
     if (!currentSVG) {
         showStatus('No drawing available', 'error');
