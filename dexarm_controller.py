@@ -1,7 +1,3 @@
-# PLAIN ENGLISH: owns the USB-serial link to the DexArm robot and offers
-# simple verbs (move, draw, home) so the rest of the app never talks raw
-# G-code to the hardware.
-# 
 """
 DexArm Controller for Flask App
 ================================

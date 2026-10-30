@@ -1,6 +1,3 @@
-# PLAIN ENGLISH: reads an SVG file and turns its curves into the tiny
-# straight-line moves (G-code) the robot arm actually understands.
-# 
 """
 SVG Path Parser for DexArm Drawing
 ===================================

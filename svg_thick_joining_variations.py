@@ -1,6 +1,3 @@
-# PLAIN ENGLISH: ten experimental variations of one stroke style (thick
-# outlines with zigzag shading) so the best-looking settings can be picked.
-# 
 """
 Thick Joining Method - 10 Variations
 =====================================

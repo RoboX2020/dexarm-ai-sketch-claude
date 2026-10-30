@@ -1,6 +1,3 @@
-# PLAIN ENGLISH: turns a photo (made of pixels) into an SVG (made of lines)
-# the robot arm can trace with a pen - pixels in, pen strokes out.
-# 
 """
 Image to SVG Converter
 ======================

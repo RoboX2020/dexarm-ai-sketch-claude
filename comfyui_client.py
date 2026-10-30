@@ -1,6 +1,3 @@
-# PLAIN ENGLISH: sends the photo to ComfyUI (a local AI image generator)
-# and waits for it to finish drawing the caricature.
-# 
 """
 ComfyUI API Client
 ==================

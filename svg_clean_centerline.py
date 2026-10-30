@@ -1,6 +1,3 @@
-# PLAIN ENGLISH: finds the center line of each stroke in a drawing, so the
-# pen traces each line once instead of outlining both of its edges.
-# 
 """
 Clean Centerline SVG Generator
 ===============================

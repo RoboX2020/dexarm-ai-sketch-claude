@@ -1,13 +1,3 @@
-// ============================================================================
-// setup.js - the first-run wizard that teaches the robot arm about the
-// real world, step by step:
-//   connect to the arm over USB -> "home" it (find its zero position) ->
-//   teach it the 4 corners of the paper (so drawings land on the page) ->
-//   teach it a safe resting pose -> draw a small test pattern.
-// The calibration numbers are saved on the server; without them the arm
-// would draw in mid-air or off the page.
-// ============================================================================
-// Setup Wizard State
 // Setup Wizard State
 let currentStep = 1;
 let currentPosition = { x: 0, y: 0, z: 0 };
@@ -138,9 +128,6 @@ async function homeDexArm() {
 }
 
 // Start corner calibration with automatic countdown and unlock
-// Guided corner teaching: the arm unlocks its motors so the user can move
-// it BY HAND to a paper corner, then presses the pen tip onto that corner
-// while this records the position (polled live from the arm).
 async function startCornerCalibration(cornerNum) {
     const stepId = cornerNum === 1 ? 'step-corner1' : cornerNum === 2 ? 'step-corner2' : 'step-resting';
     const statusId = `positionStatus${cornerNum}`;

@@ -1,16 +1,3 @@
-# ============================================================================
-# app.py - the web server that runs the whole "AI caricature robot".
-#
-# The idea: you snap a photo in the browser, an AI image generator
-# (ComfyUI) redraws it as a caricature, that image is converted into SVG
-# line art, and a DexArm robot arm draws it on paper with a pen.
-#
-# This file is the glue: a Flask app serving the web pages plus a JSON API
-# the browser calls to save photos, kick off generation, and drive the arm.
-# The heavy lifting lives in neighbours: comfyui_client.py (AI images),
-# svg_converter.py + friends (image -> pen strokes), dexarm_controller.py
-# (talking to the robot over USB serial).
-# ============================================================================
 from flask import Flask, render_template, request, jsonify, send_from_directory, Response
 import os
 import base64
@@ -165,8 +152,6 @@ def get_suggestions():
         suggestions = json.load(f)
     return jsonify(suggestions)
 
-# --- Photo intake: the browser sends a webcam snapshot as base64 text;
-# decode it, stamp it with the time, and file it under photos/.
 @app.route('/api/save-photo', methods=['POST'])
 def save_photo():
     """Save photo, generate caricature, convert to SVG, and optionally draw"""
@@ -313,8 +298,6 @@ def setup():
     """DexArm setup wizard page"""
     return render_template('setup.html')
 
-# --- Robot control endpoints: connect/disconnect/status plus the drawing
-# calibration wizard (the arm must learn where the paper's corners are).
 @app.route('/api/dexarm/connect', methods=['POST'])
 def dexarm_connect():
     """Connect to DexArm"""
